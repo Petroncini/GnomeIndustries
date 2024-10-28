@@ -1,0 +1,16 @@
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
+  const [isOpen, setIsOpen] = useState(false)
+
+
+  return (
+    <div className={stl_container}>
+        <div className={stl_sub_container}>
+            <span><Image src={'/' + props.img} alt="" width={26} height={31.56} /></span>
+            <p className='pl-4 text-lg'>{props.name}</p>
+            <p className='pl-96'>{props.date}</p>
+            <p className='pl-80'>{props.total}</p>
+            <span className='pl-20'><Image src="/arrow_head_down.png" alt="" width={13} height={13} /></span>
+        </div>
+    </div>
+  )
