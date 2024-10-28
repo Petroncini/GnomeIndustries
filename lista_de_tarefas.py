@@ -2,13 +2,15 @@ import os
 
 from langchain_openai import ChatOpenAI
 
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = ""
 
 from openai import OpenAI
 
-client = OpenAI()
+client = OpenAI(api_key=api_key)
 
-file = open("instrucoes_chefe.txt", "r")
+file_path = fr'{os.getcwd()}\public\arquivos\instrucoes_chefe.txt'
+
+file = open(file_path, "r")
 transcript = file.read()
 
 system_prompt = """
@@ -27,7 +29,7 @@ completion = client.chat.completions.create(
    ]
  )
 
-print(completion.choices[0].message.content)
+#print(completion.choices[0].message.content)
 
 
 from fpdf import FPDF
@@ -45,6 +47,35 @@ def create_pdf_with_fpdf(text, filename):
     pdf.output(filename)
 
 # Example usage
+file_path = "ordem.pdf"
 text = completion.choices[0].message.content
-create_pdf_with_fpdf(text, "ordem.pdf")
+create_pdf_with_fpdf(text, file_path)
+
+
+import cloudinary
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
+
+cloudinary.config( 
+    cloud_name = "dwbz60u2o", 
+    api_key = "138523466332567", 
+    api_secret = "sZ07cVb_KVVD3IXEsBdFAEH6PWo", # Click 'View API Keys' above to copy your API secret
+    secure=True
+)
+
+
+
+def upload_pdf_to_cloudinary(file_path):
+    response = cloudinary.uploader.upload(
+        file_path,
+        resource_type="raw",
+        folder="pdfs"  # Optional: specify a folder in Cloudinary
+    )
+    return response["url"]
+
+response_dict = {
+    "link": upload_pdf_to_cloudinary(file_path)
+}
+print(response_dict)
+
 

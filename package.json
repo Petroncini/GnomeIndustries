@@ -1,0 +1,52 @@
+{
+  "name": "inovdrop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@iconify/react": "^4.1.1",
+    "axios": "^1.6.4",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.2.0",
+    "clsx": "^2.1.0",
+    "debug": "^4.3.4",
+    "framer-motion": "^10.17.0",
+    "fs": "^0.0.1-security",
+    "mime": "^4.0.4",
+    "mongoose": "^8.0.4",
+    "next": "^14.0.4",
+    "next-auth": "^5.0.0-beta.3",
+    "node-fetch": "^2.7.0",
+    "pdf-img-convert": "^1.2.1",
+    "pdf2json": "^3.0.5",
+    "pdfjs-dist": "^4.4.168",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-modal": "^3.16.1",
+    "sharp": "^0.33.2",
+    "sweetalert2": "^11.10.3",
+    "tailwind-merge": "^2.2.0",
+    "tesseract.js": "^5.1.0",
+    "uuid": "^9.0.1",
+    "webpack": "^5.89.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-modal": "^3.16.3",
+    "@types/uuid": "^9.0.7",
+    "autoprefixer": "^10.0.1",
+    "pdf-to-png-converter": "^3.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
