@@ -12,7 +12,7 @@ import { spawn } from 'child_process';
 
 
 cloudinary.config({ 
-    cloud_name: 'dntylhu7k', 
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
     secure: true,
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
@@ -55,10 +55,10 @@ export const POST = async (req, res) => {
 
         // Your existing logic to analyze the file with 'ANALISADOR.PY'
         //ANALISANDO O ARQUIVO COM O 'ANALISADOR.PY'
-        const path_py = 'C:/Users/nicol/OneDrive/Documentos/JS/Projects/Tractian/lista_de_tarefas.py'
+        const path_py = join(process.cwd(), 'scripts', 'manutencao', 'lista_de_tarefas.py')
 
-        //Executando o arquivo python
-        const python_process = spawn('python', [path_py, file.name]);
+        //Executando o arquivo python (PYTHON_BIN permite usar 'python3' ou um venv)
+        const python_process = spawn(process.env.PYTHON_BIN || 'python', [path_py, file.name]);
 
 
         //Recebendo os dados com uma promessa para que seja executado de forma async

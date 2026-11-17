@@ -1,0 +1,10 @@
+# Só o que o RAG usa. O provedor é o Gemini (Google), que tem plano gratuito.
+# Versões fixas para todo mundo instalar exatamente o mesmo ambiente.
+langchain-core==1.8.1
+langchain-community==0.4.2
+langchain-text-splitters==1.1.3
+langchain-chroma==1.1.0
+langchain-google-genai==4.5.0
+chromadb==1.5.9
+pypdf==7.1.0
+python-dotenv==1.2.4

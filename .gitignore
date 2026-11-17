@@ -1,0 +1,54 @@
+# ---------- Node / Next.js ----------
+node_modules/
+/.next/
+/out/
+/build/
+/coverage/
+*.tsbuildinfo
+# Gerado pelo Next a cada `npm run dev` ou `npm run build`
+next-env.d.ts
+.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- Segredos ----------
+# Copie .env.example para .env e preencha. Só o modelo vai para o git.
+.env
+.env.*
+!.env.example
+*.pem
+
+# ---------- Dados gerados ao rodar ----------
+# Uploads do front (boletos, áudios). A pasta fica no git só pelo .gitkeep.
+/public/arquivos/*
+!/public/arquivos/.gitkeep
+# Saída padrão de scripts/transcricao/transcribe.py
+full_transcript.txt
+# Idiomas que o tesseract.js baixa na primeira execução
+*.traineddata
+# Manual do RAG: o fabricante proíbe reprodução; o link está em rag/data/LEIA-ME.md
+rag/data/manual.pdf
+# Bancos vetoriais do Chroma: são recriados a partir do PDF
+chroma/
+chroma_db/
+.chroma/
+
+# ---------- Sistema / editor ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+# Preferências locais do Claude Code
+.claude/settings.local.json

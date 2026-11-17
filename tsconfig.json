@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/docList.tsx", "app/api/UploadManual/functions.ts", "app/api/UploadF/route.js", "next.config.js", "app/contas/fixas/[id]/page.jsx", "app/contas/fornecedores/[id]/page.jsx", "app/page.jsx", "app/layout.tsx", "app/api/UploadChefe/route.js", "app/api/UploadManual/route.js", "app/contas/page.jsx", "app/contas/pagas/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

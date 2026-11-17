@@ -7,13 +7,13 @@ import { redirect } from 'next/navigation';
 import {v2 as cloudinary} from 'cloudinary';
 import { fetchContas } from '@/app/lib/data';
 import bcrypt from "bcrypt";
-import { signIn, signOut } from '../../backu/auth/auth'
+import { signIn, signOut } from './auth/auth'
 import Swal from 'sweetalert2';
 
 
 
 cloudinary.config({ 
-    cloud_name: 'dntylhu7k', 
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
     secure: true,
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
